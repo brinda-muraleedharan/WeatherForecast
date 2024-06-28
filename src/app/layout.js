@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Weather App",
-  description: "powered by tommorrow.io(Brinda)",
+  description: "powered by tommorrow.io (Brinda)",
 };
 
 export default function RootLayout({ children }) {
