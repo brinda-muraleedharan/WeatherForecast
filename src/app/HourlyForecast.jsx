@@ -4,7 +4,7 @@ import HourItem from "./HourItem";
 import { useDispatch, useSelector } from "react-redux";
 
 function HourlyForecast() {
-  const hour = [1, 2, 3, 4, 5, 6];
+  //const hour = [1, 2, 3, 4, 5, 6];
   
   const hourDataValue=useSelector((state)=>state.hourlydata);
   
