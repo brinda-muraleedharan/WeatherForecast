@@ -7,7 +7,7 @@ function TenDayForeCast() {
     console.log("futureForeCast")
     console.log(futureForeCast)
     let dayForecastComp=()=>{
-        return futureForeCast.map((item)=><DayForecast temp={item}/>)
+        return futureForeCast.map((item)=><DayForecast key={item.day} temp={item}/>)
     }
   return (
     <div className='w-full m-5'>

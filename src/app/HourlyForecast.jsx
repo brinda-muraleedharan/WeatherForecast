@@ -11,7 +11,7 @@ function HourlyForecast() {
   
   let hourData = () => {
     
-    return hourDataValue.map((item) => <HourItem temp={item}/>);
+    return hourDataValue.map((item) => <HourItem key={item.time} temp={item}/>);
   };
   return (
     <div className="w-full">

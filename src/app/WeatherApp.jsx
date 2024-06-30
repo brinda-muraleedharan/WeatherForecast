@@ -48,7 +48,7 @@ function WeatherApp() {
     
   }, [longitude]);
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 bg-blue-200 text-black" >
+    <main className="flex min-h-screen flex-col items-center p-8 sm:p-16 md:p-24 bg-blue-200 text-black" >
       <Navigation />
       <CurrentForecast />
       <HourlyForecast />
