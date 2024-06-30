@@ -17,7 +17,7 @@ function HourlyForecast() {
     <div className="w-full">
       <span className="text-black px-5">Hourly forecast</span>
 
-      <div className="flex bg-slate-200 rounded-3xl p-12 w-full">{hourData()}</div>
+      <div className="flex bg-slate-200 rounded-3xl w-full">{hourData()}</div>
     </div>
   );
 }
