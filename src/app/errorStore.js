@@ -3,12 +3,16 @@ const { createSlice } = require("@reduxjs/toolkit");
 const errorSlice=createSlice({
     name:"errorData",
     initialState:{
-        statusCode:400,
+        statusCode:200,
         locationName:""
     },
     reducers:{
         setErrorData:(state,action)=>{
             console.log(action.payload);
+            return{
+                ...state,
+                statusCode:action.payload
+            }
            
         },
         setLocationName:(state,action)=>{

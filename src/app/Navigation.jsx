@@ -73,7 +73,7 @@ function Navigation() {
         updateLocationData(e.target.value)
       }}type="text" className=" col-span-4 py-3 px-4 pe-9  border-x-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
       </input>
-      <button className=" text-white bg-blue-800 hover:bg-blue-950 rounded-2xl" onClick={()=>
+      <button className=" text-white bg-blue-800 hover:bg-blue-950 rounded-2xl text-xs sm:text-sm" onClick={()=>
         getWeatherData()
       }>Search</button>
      

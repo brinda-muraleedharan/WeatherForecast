@@ -7,8 +7,8 @@ let fetchApiData=(options,dispatch,loadHourData,params,loadDailyData,setLocation
     fetch('https://api.tomorrow.io/v4/weather/forecast?apikey=PShPpkTDzWirRosXaLMlCC3v7fa0hMOi&'+params).then(
         response => {
             errorValue=response.status;
-            console.log(response.status+"status");
-            setErrorData(response.status);
+            console.log(response.status+"statusCode");
+            dispatch(setErrorData(response.status));
             return response.json()
         }
     ).then(
@@ -48,7 +48,7 @@ let fetchApiData=(options,dispatch,loadHourData,params,loadDailyData,setLocation
             dispatch(setLocationName(json.location))
             }
             }
-    ).catch(err => console.error(err));
+    ).catch(err => console.error(err+"this"));
 
 }
 export default fetchApiData;
