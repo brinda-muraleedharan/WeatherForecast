@@ -9,6 +9,7 @@ function Navigation() {
       getYourCurrentLocation();
     },[]);
     const dispatch=useDispatch();
+    const[city,setCity]=useState("")
     const [cities,setCities]=useState([]);
     let getYourCurrentLocation=()=>{
       navigator.geolocation.getCurrentPosition((position) => {
@@ -28,6 +29,16 @@ function Navigation() {
                 latitude:coordinates[0]
             
         }))
+    }
+    let getWeatherData=(locationName)=>{
+      dispatch(changeLocation({
+        locationValue:city
+    
+  }));
+    }
+    let updateLocationData=(name)=>{
+      console.log(name);
+      setCity(name)
     }
   async function fetchCities() {
     const myHeaders = new Headers({
@@ -56,13 +67,22 @@ function Navigation() {
 
   }
   return (
-    <div className="grid w-full rounded">
-      <input type="text" className="py-3 px-4 pe-9  border-x-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" onChange={(e)=>assignLocation(e.target.value)}>
-        {/*<OptionItem cities={cities}/>*/}
+    <div className="w-full rounded">
+      <div className="w-full rounded grid grid-cols-6 grid-flow-row">
+      <input value={city} onChange={(e)=>{
+        updateLocationData(e.target.value)
+      }}type="text" className=" col-span-4 py-3 px-4 pe-9  border-x-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
       </input>
-      <button className=" my-2 px-4 pe-9 bg-slate-50 border-x-gray-300 rounded-lg text-sm w-1/2" onClick={()=>{
+      <button className=" text-white bg-blue-800 hover:bg-blue-950 rounded-2xl" onClick={()=>
+        getWeatherData()
+      }>Search</button>
+     
+      
+      <button className="rounded-2xl w-1/4 border-none text-white align-top bg-blue-800 hover:bg-blue-950 my-2 px-9" onClick={()=>{
         getYourCurrentLocation();
-      }}><FaLocationDot className="my-2"/> Know your location </button>
+        setCity("")
+      }}><FaLocationDot className="align-middle"/></button>
+       </div>
     </div>
   );
 }

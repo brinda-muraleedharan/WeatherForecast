@@ -7,8 +7,17 @@ const locationSlice = createSlice({
   reducers: {
     changeLocation: (state, action) => {
         console.log(action)
-      state.longitude = action.payload.longitude;
-      state.latitude = action.payload.latitude; //not mutating here
+        
+        if(action.payload.longitude){
+          state.locationValue="";
+          state.longitude = action.payload.longitude;
+          state.latitude = action.payload.latitude; //not mutating here
+        }else{
+          state.locationValue=action.payload.locationValue;
+          state.longitude = 0;
+          state.latitude = 0; 
+        }
+     
     },
   },
 });

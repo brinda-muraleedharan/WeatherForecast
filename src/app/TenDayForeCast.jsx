@@ -12,7 +12,7 @@ function TenDayForeCast() {
   return (
     <div className='w-full m-5'>
         <span>6 day forecast</span>
-        <div className='grid grid-flow-row grid-rows-10'>
+        <div className='grid grid-flow-row grid-rows-6'>
             {dayForecastComp()}
         </div>
     </div>
