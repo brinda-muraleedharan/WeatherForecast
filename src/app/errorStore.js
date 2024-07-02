@@ -18,10 +18,16 @@ const errorSlice=createSlice({
         setLocationName:(state,action)=>{
             console.log(action.payload);
             if(action.payload.name){
-                var loc=action.payload.name.split(",")
+                let name=action.payload.name;
+                let locName="Your location";
+                var loc=name.split(",");
+                if(loc.length>1){
+                    locName=loc[0]+","+loc[loc.length-1]
+                }
+                
                 return {
                     ...state,
-                    locationName:loc[0]+","+loc[loc.length-1]}
+                    locationName:locName}
             }
 
         }

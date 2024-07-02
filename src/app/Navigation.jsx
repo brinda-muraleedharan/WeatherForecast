@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import OptionItem from "./OptionItem";
 import { useDispatch } from "react-redux";
 import { changeLocation } from "./location";
 import { FaLocationDot } from "react-icons/fa6"
+import { setLocationName } from "./errorStore";
 function Navigation() {
     useEffect(()=>{
       getYourCurrentLocation();
@@ -18,7 +18,8 @@ function Navigation() {
           longitude:position.coords.longitude,
           latitude:position.coords.latitude
       
-  }))
+  }));
+  dispatch(setLocationName({name:"your location"}))
         
       });
     }
