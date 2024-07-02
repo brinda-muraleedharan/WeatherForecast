@@ -6,7 +6,7 @@ function Description({dayData=34,hourData=34}) {
   console.log(locationName+"location")
   return (
     <div className='grid grid-rows-6 grid-flow-row p-10'>
-        <span className='text-right'>{dayData.desc}</span>
+        <span className='text-right'>{hourData.desc}</span>
         <span className='text-right'>Feels like {hourData.tempFeel}°</span>
         <span className='italic row-span-3 text-xs sm:text-sm'>{locationName}</span>
     </div>
