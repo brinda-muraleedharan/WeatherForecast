@@ -16,12 +16,12 @@ let fetchApiData=async(options,dispatch,loadHourData,params,loadDailyData,setLoc
         async json=>{
             if(errorValue==200){
                 console.log(json);
-                let res=await fetch(`http://api.geonames.org/timezoneJSON?lng=${json.location.lon}&lat=${json.location.lat}&username=bmuralee`)
+                let res=await fetch(`https://api.ipgeolocation.io/timezone?apiKey=de21ece75ca54178a179f660adb67149&long=${json.location.lon}&lat=${json.location.lat}`)
                 if (!res.ok) {
                     console.log(res.statusText);
                   }
                   const t = await res.json();
-                  timeZone= await t.timezoneId;
+                  timeZone= await t.timezone;
                 json.timelines.daily.forEach((item) => {
                 const date = new Date(item.time);
                 const day=date.toLocaleDateString("en-US", {timeZone:timeZone,weekday: "short"});
