@@ -24,7 +24,7 @@ let fetchApiData=async(options,dispatch,loadHourData,params,loadDailyData,setLoc
                   timeZone= await t.timezoneId;
                 json.timelines.daily.forEach((item) => {
                 const date = new Date(item.time);
-                const day=date.toDateString("en-US", {timeZone:"America/New_York",weekday: "short"});
+                const day=date.toLocaleDateString("en-US", {timeZone:timeZone,weekday: "short"});
                 let tempObj={
                     tempMax:parseInt(item.values.temperatureMax),
                     tempMin:parseInt(item.values.temperatureMin),
