@@ -7,7 +7,7 @@ let fetchApiData=async(options,dispatch,loadHourData,params,loadDailyData,setLoc
     fetch('https://api.tomorrow.io/v4/weather/forecast?apikey=PShPpkTDzWirRosXaLMlCC3v7fa0hMOi&'+params).then(
         response => {
             errorValue=response.status;
-            console.log(response.status+"statusCode");
+            console.log(response.status+"statusCode1");
             dispatch(setErrorData(response.status));
             
             return response.json()
