@@ -14,7 +14,7 @@ function MainLayout({ statusCode }) {
       </>
     );
   } else {
-    return <ManyRequest />;
+    return <ManyRequest status={statusCode} />;
   }
 }
 
