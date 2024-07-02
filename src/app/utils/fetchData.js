@@ -41,11 +41,12 @@ let fetchApiData=async(options,dispatch,loadHourData,params,loadDailyData,setLoc
                 const date = new Date(item.time);
                 console.log(date.toLocaleString("en-US", {timeZone:timeZone,hour: "2-digit"}))
                 const time=date.toLocaleString("en-US", {timeZone:timeZone,hour: "2-digit",hourCycle: "h24"});
+                const displayTime=date.toLocaleString("en-US", {timeZone:timeZone,hour: "2-digit"})
                 let tempObj={
                     val:parseInt(item.values.temperature),
                     code:(time>18||time<6)?item.values.weatherCode+"1":item.values.weatherCode+"0",
                     tempFeel:item.values.temperatureApparent,
-                    time:time
+                    time:displayTime
                 }
                 tempObj.desc=dictstring[tempObj.code]
               hourTemp.push(tempObj);
